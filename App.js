@@ -21,7 +21,7 @@ export default function App() {
           isLooping
           onPlaybackStatusUpdate={(status) => setStatus(() => status)}
         />
-        <View>
+        <View style={styles.buttonArea}>
           <Button
             title={status.isPlaying ? "Pause" : "Play"}
             onPress={() => status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()}
@@ -44,15 +44,15 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     borderRadius: 24,
   },
+  buttonArea: {
+    marginBottom: 70
+  },
   button: {
-    display: 'flex',
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#0000ff",
     color: "#fff",
     borderRadius: 12,
     borderWidth: 1,
     borderColor: "#0000ff",
-    padding: 18
+    padding: 24
   }
 });
